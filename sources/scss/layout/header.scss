@@ -1,0 +1,279 @@
+.header {
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    z-index:99;
+
+    &.mobile-nav--active {
+        @media (max-width: 799px)
+        {
+            .header__nav {
+                opacity: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        position: relative;
+        z-index: 11;
+
+        @include breakpoint(md) {
+            margin-right: 3rem;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+    // mobile menu button
+    &__button {
+        position: relative;
+        z-index: 11;
+        
+        @include breakpoint(md) {
+            display: none;
+        }
+    }
+
+    &__nav {
+        opacity: 0;
+        display: none;
+        position: absolute;
+        top: 5rem;
+        left: 2.4rem;
+        right: 2.4rem;
+        width: calc(100% - 4.8rem);
+        padding: 4rem 2.4rem;
+        z-index: 2;
+        color: $header-link-color; // link color
+        background-color: $header-mobile-background-color;
+        border-radius: 1rem;
+        box-shadow: 0 0 13px 3px rgba(0, 0, 0, 0.1);
+
+        // desktop menu
+        @include breakpoint(md) {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: initial;
+            position: initial;
+            top: initial;
+            left: initial;
+            padding: 0;
+            margin-left: 4rem;
+            background-color: transparent;
+            box-shadow: none;
+            opacity: 1;            
+        }
+
+        &__list {
+            margin-bottom: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include breakpoint(md) {
+                margin: 0;
+                flex-direction: row;
+            }
+        }
+
+        &__buttons {
+            width: 100%;
+            padding-top: 1.6rem;
+            border-top: 1px solid rgba($border-color, .3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            @include breakpoint(md) {
+                flex-direction: row;
+                width: initial;
+                max-width: initial;
+                margin: 0;
+                padding: 0;
+                border: none;
+            }
+
+            .btn {
+                font-size: 1.8rem;
+                @include breakpoint(md) {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .btn--link {
+                margin-bottom: 1rem;
+                color: $white;
+                @include breakpoint(md) {
+                    margin: 0;
+                    font-size: 1.6rem;
+                    color: $light;
+
+                    &:hover {
+                        color: $dark;
+                    }
+                }
+            }
+
+            .btn--primary {
+                width: 100%;
+                max-width: 32rem;
+                @include breakpoint(md) {
+                    width: initial;
+
+                    &:hover {
+                    }
+                }
+            }
+        }
+
+        &__item {
+            width: 100%;
+            max-width: 26rem;
+            margin-bottom: 2.4rem;
+
+            @include breakpoint(md) {
+                max-width: initial;
+                margin-bottom: 0;
+                &:not(:last-child) {
+                    margin-right: 4rem;
+                }
+            }
+
+            &.has-dropdown {
+                position: relative;
+
+                @include breakpoint(md) {
+                    margin-bottom: 0;
+                    padding: 0;
+                    border: 0;
+                }
+
+                > a {
+                    position: relative;
+                    padding-right: 2rem;
+
+                    &:after {
+                        @extend .shape-arrow;
+                        @extend .shape-arrow--down;
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-100%) rotate(45deg);
+                    }
+                }
+
+                .header__nav__dropdown__wrapper {
+                    @include breakpoint(md) {
+                        position: absolute;
+                        width: 100%;
+                        padding-top: 2rem;
+                    }
+                }
+
+                .header__nav__dropdown {
+                    display: none;
+                    max-width: 28rem;
+                    margin: 1rem auto;
+                    padding: 1rem 0;
+                    background-color: $white;
+                    border-radius: .5rem;
+
+                    @include breakpoint(md) {
+                        max-width: initial;
+                        min-width:16rem;
+                        margin: 0;
+                        margin-left: -2rem;
+                        padding: 1rem 1.5rem;
+                        background-color: $white;
+                        box-shadow: 0 0 13px 3px rgba(0, 0, 0, 0.1);
+                    }
+
+                    // dropdown links
+                    a {
+                        display: block;
+                        margin: 2rem 0;
+                        letter-spacing: .5px;
+                        font-family: $font-family-secondary;
+                        font-weight: $font-weight-bold;
+                        font-size: 1.5rem;
+                        color: currentColor;
+
+                        @include breakpoint(md) {
+                            margin: 1.5rem 0;
+                            font-weight: $font-weight-bold;
+                            &:hover {
+                                color: $dark;
+                            }
+                        }
+                    }
+                }
+
+                // dropdown menu click open only mobile
+                @media (max-width: 799px) {
+                    &.is-active {
+                        > a {
+                            &:after {
+                                transform: translateY(-50%) rotate(225deg)
+                            }
+                        }
+
+                        .header__nav__dropdown {
+                            display: block;
+                        }
+                    }
+                }
+
+                // dropdown menu hover open only desktop
+                @include breakpoint(md) {
+                    &:focus-within,
+                    &:hover {
+                        > a {
+                            color: $dark;
+                            &:after {
+                                transform: translateY(-50%) rotate(225deg)
+                            }
+                        }
+                        
+                        .header__nav__dropdown {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__link {
+            display: inline-block;
+            font-size: 1.8rem;
+            font-family: $font-family-secondary;
+            font-weight: $font-weight-bold;
+            color: $white;
+
+            @include breakpoint(md) {
+                font-size: 1.6rem;
+                letter-spacing: initial;
+                color: currentColor;
+                &:hover,
+                &:focus {
+                    color: $dark;
+                }
+            }
+        }
+    }
+}
