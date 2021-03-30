@@ -1,0 +1,10 @@
+mixin icon(options={})
+    -
+        const defaults = {
+            span: 'icon',
+            i: 'fas fa-info-circle'
+        }
+        const settings = Object.assign({}, defaults, options)
+        
+    span(class=settings.span)
+        i(class=settings.i)

@@ -1,0 +1,34 @@
+mixin shorten({shorten} = data)
+    .shorten 
+        .shorten__container.container 
+            form.form.shorten__form
+                .form__field 
+                    input(type="url" class="form__control" id="shortenIt" placeholder=shorten.placeholder data-error-message="Please add a link" required)
+                    .form__field__message
+                +button(shorten.button)
+                    | #{shorten.button.text}
+            .shorten__results
+                .shorten__results__item
+                    .shorten__results__orgin
+                        | https://www.frontendmentor.io
+                    .shorten__results__short 
+                        | https://rel.link/gxOXp9
+                    .shorten__results__button
+                        +button({attrs: {"class": "shorten__btn btn btn--primary"}})
+                            | Copy
+                .shorten__results__item
+                    .shorten__results__orgin
+                        | https://www.frontendmentor.io
+                    .shorten__results__short 
+                        | https://rel.link/gxOXp9
+                    .shorten__results__button
+                        +button({attrs: {"class": "shorten__btn btn btn--secondary"}})
+                            | Copied!
+                .shorten__results__item
+                    .shorten__results__orgin
+                        | https://www.frontendmentor.io/profile/nmorajda
+                    .shorten__results__short 
+                        | https://rel.link/k4lKyk
+                    .shorten__results__button
+                        +button({attrs: {"class": "shorten__btn btn btn--primary"}})
+                            | Copy

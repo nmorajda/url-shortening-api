@@ -1,0 +1,43 @@
+-
+    const data = self.htmlWebpackPlugin.options
+    const pathToFile = (data.mode == 'development') ? "./sources/" : ""
+
+    // current date and time
+    const date = new Date();
+    const createDate = date.toLocaleDateString('pl-PL', {month: '2-digit', day: '2-digit'}) + ' ' + date.toLocaleTimeString('pl-PL', {hour12: false});
+
+    locals = {
+        pathToFile,
+        data,
+        createDate
+    }
+
+//- elements
+include ./includes/link.pug
+include ./includes/button.pug
+include ./includes/img.pug
+include ./includes/picture.pug
+include ./includes/icon.pug
+include ./includes/iconsvg.pug
+
+//- layouts
+include ./layout/header/header
+include ./layout/footer/footer
+
+//- head
+include ./head
+
+block variables
+    - 
+        let activePage = data.chunks[0];
+
+doctype html
+html&attributes(data.html.head.html.attrs)
+    head
+        +head(data.html.head)
+    body
+        include ./icons
+        +header(data.html)
+        main.main 
+            block content
+        +footer(data.html)

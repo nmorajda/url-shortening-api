@@ -1,0 +1,26 @@
+mixin tabs(options = {})
+    - 
+        const defaults = {
+            tabs: [],
+            config: {
+                attrs: {
+                    class: "tabs"
+                }
+            }
+        }
+
+        const settings = Object.assign({}, defaults, options);
+
+    .tabs-list
+        div&attributes(settings.config.attrs)
+            ul
+                each tab in settings.tabs
+                    li(class=tab.active ? 'is-active': '')
+                        a 
+                            if (tab.icon)
+                                +icon(tab.icon)
+                            | #{tab.header}
+        .tabs-content
+            each tab in settings.tabs
+                .tab-block.content(style=tab.active ? 'display:block' : 'display:none')
+                    | !{tab.content}

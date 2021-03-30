@@ -1,0 +1,26 @@
+mixin section(data = {})
+    
+    - 
+        const defaults = {
+            section: {
+                attrs: {
+                    class: "section default is-medium"
+                }
+            }
+        }
+        const {config:settings} = locals.data.html.sections;
+        const {config, subtitle, title, lead} = data
+        const section = Object.assign({}, defaults.section, config.section);
+        
+        
+    section&attributes(section.attrs)
+        .container
+            .section__header
+                p&attributes(settings.subtitle.attrs) #{subtitle}
+                h2&attributes(settings.title.attrs) #{title}
+                p&attributes(settings.lead.attrs) #{lead}
+            .section__content                    
+                if block
+                    block
+        .section__extra&attributes(sections.config.extra.attrs)
+            span #{sections.config.extra.text}  

@@ -1,0 +1,11 @@
+mixin button(options={})
+    - 
+        const defaults = {
+            attrs: {}
+        }
+
+        const { attrs } = Object.assign({}, defaults, options);
+
+    button.btn&attributes(attrs)
+        if block
+            block 

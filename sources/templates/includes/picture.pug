@@ -1,0 +1,11 @@
+mixin picture(path, fileName, alt, type)
+    -
+        const getName = (fileName) => {
+            if (!fileName) return;
+            
+            return fileName.substring(0, fileName.lastIndexOf('.')) || fileName
+        }
+    picture
+        each val in type
+            source(data-srcset=pathToFile + path + getName(fileName) + "." + val type="image/" + val)
+        img.lazy(data-srcset=pathToFile + path + fileName alt=alt)

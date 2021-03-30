@@ -1,0 +1,18 @@
+mixin head({robots, title, description, fonts} = data)
+    meta(charset="utf-8")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(rel="preload" as="style" href=fonts)
+    link(rel="stylesheet", href=fonts)
+    block fonts
+    meta(http-equiv="x-ua-compatible", content="ie=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="robots", content=robots)
+    meta(name="theme-color", content="#ffffff")
+    meta(name="msapplication-navbutton-color", content="#ffffff")
+    meta(name="apple-mobile-web-app-status-bar-style" content="#ffffff")
+    meta(content="telephone=no", name="format-detection")
+    link(rel="icon" type="image/x-icon" href=pathToFile+"images/favicon.ico")
+    title=title
+    meta(name="description", content=description)
+    block styles
+    block scripts

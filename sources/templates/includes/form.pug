@@ -1,0 +1,31 @@
+mixin form(form)
+    form(action=form.action method=form.method)
+        each field, key in form.fields
+            .field                
+                if(field.type === 'textarea')
+                    label.label(for=key) #{field.label}
+                    .control
+                        textarea.textarea(id=key name=key placeholder=field.placeholder)
+                    p.help #{field.help}
+                else if (field.type === 'checkbox')
+                    .control.mt-5.mb-5
+                        label.checkbox(for=key)
+                            input.checkbox.mr-3(id=key name=key type=field.type required=field.required)
+                            | !{field.label}
+                    p.help #{field.help}
+                else
+                    label.label(for=key) #{field.label}
+                    .control                
+                        input.input(
+                            id=key 
+                            name=key 
+                            type=field.type 
+                            placeholder=field.placeholder
+                            required=field.required
+                        )
+                    p.help #{field.help}
+        .field.is-grouped.mt-6
+            each button, key in form.buttons
+                .control
+                    button.button(type=key class=button.class) #{button.text}
+

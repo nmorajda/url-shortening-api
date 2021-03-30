@@ -1,0 +1,14 @@
+mixin features({ features } = data)
+    section.section.features
+        .section__header
+            h2.section__heading.features__heading #{features.heading}
+            p.section__subheading.features__subheading #{features.subheading}
+        .section__body
+            .container.features__container
+                .features__items 
+                    each feature in features.items 
+                        .feature__item
+                            .feature__icon
+                                +iconsvg({id: feature.icon})
+                            h3.feature__heading #{feature.heading}
+                            p.feature__text #{feature.text}
