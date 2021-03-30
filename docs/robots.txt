@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /php
+Disallow: /vendor
+Disallow: /assets
+Crawl-delay: 2
+Sitemap: https://karmeb.pl/sitemap.xml
+Host: karmeb.pl
