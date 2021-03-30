@@ -1,0 +1,224 @@
+{
+  "head": {
+    "html": {
+      "attrs": {
+        "class": "no-js",
+        "lang": "en",
+        "dir": "ltr"
+      }
+    },
+    "robots": "",
+    "title": "Frontend Mentor | Shortly URL shortening API Challenge",
+    "description": "Frontend Mentor - Shortly URL shortening API Challenge solution",
+    "fonts": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap",
+    "styles": [],
+    "scripts": []
+  },
+
+  "brand": {
+    "link": {
+      "attrs": {
+        "href": "/index.html",
+        "title": "Frontend Mentor - Shortly URL shortening API Challenge solution",
+        "class": "logo__link"
+      }
+    },
+    "img": {
+      "attrs": {
+        "src": "images/logo.svg",
+        "class": "logo__img",
+        "alt": "Logo"
+      }
+    }
+  },
+
+  "menu": {
+    "mainMenu": {
+      "items": [
+        {
+          "anchor": "Features",
+          "attrs": { "href": "#features"}
+        },
+        {
+          "anchor": "Pricing",
+          "attrs": { "href": "#pricing"}
+        },
+        {
+          "anchor": "Resources",
+          "attrs": { "href": "#resources"},
+          "dropdown": [
+            {
+              "anchor": "Overview",
+              "attrs": { "href": "#overview"}
+            },
+            {
+              "anchor": "Pricing",
+              "attrs": { "href": "#pricing"}
+            }
+          ]
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Login",
+          "attrs": {
+            "class": "btn btn--link header__btn"
+          }
+        },
+        {
+          "text": "Sign Up",
+          "attrs": {
+            "class": "btn btn--primary btn--rounded header__btn"
+          }
+        }
+      ]
+    },
+    "footerMenu": {
+      "items": [
+        {
+          "heading": "Features",
+          "dropdown": [
+            {
+              "anchor": "Link Shortening",
+              "href": "#"
+            },
+            {
+              "anchor": "Branded Links",
+              "href": "#"
+            },
+            {
+              "anchor": "Analytics",
+              "href": "#"
+            }
+          ]
+        },
+        {
+          "heading": "Resources",
+          "dropdown": [
+            {
+              "anchor": "Blog",
+              "href": "#"
+            },
+            {
+              "anchor": "Developers",
+              "href": "#"
+            },
+            {
+              "anchor": "Support",
+              "href": "#"
+            }
+          ]
+        },
+        {
+          "heading": "Company",
+          "dropdown": [
+            {
+              "anchor": "About",
+              "href": "#"
+            },
+            {
+              "anchor": "Our Team",
+              "href": "#"
+            },
+            {
+              "anchor": "Careers",
+              "href": "#"
+            },
+            {
+              "anchor": "Contact",
+              "href": "#"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  
+  "hero": {
+    "heading": "More than just shorter links",
+    "subheading": "Build your brand’s recognition and get detailed insights on how your links are performing.",
+    "buttons": [
+      {
+        "text": "Get Started",
+        "attrs": {
+          "class": "hero__btn btn btn--primary btn--large btn--rounded"
+        }
+      }
+    ]
+  },
+
+  "shorten": {
+    "placeholder": "Shorten a link here...",
+    "errorMessage": "Please add a link",
+    "button": {
+      "text": "Shorten It!",
+      "attrs": {
+        "type": "submit",
+        "class": "shorten__btn btn btn--primary btn--large"
+      }
+    }
+  },
+
+  "features": {
+    "heading": "Advanced Statistics",
+    "subheading": "Track how your links are performing across the web with our advanced statistics dashboard.",
+    "items": [
+      {
+        "icon": "#icon-brand-recognition",
+        "heading": "Brand Recognition",
+        "text": "Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content."
+      },
+      {
+        "icon": "#icon-detailed-records",
+        "heading": "Detailed Records",
+        "text": "Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions."
+      },
+      {
+        "icon": "#icon-fully-customizable",
+        "heading": "Fully Customizable",
+        "text": "Improve brand awareness and content discoverability through customizable links, supercharging audience engagement."
+      }
+    ]
+  },
+
+  "cta": {
+    "heading": "Boost your links today",
+    "button": {
+      "text": "Get Started",
+      "attrs": {
+        "class": "cta__btn btn btn--primary btn--large btn--rounded"
+      }
+    }
+  },
+
+  "socials": [
+    {
+      "name": "Facebook",
+      "href": "https://www.facebook.com",
+      "title": "",
+      "id": "#icon-facebook"
+    },
+    {
+      "name": "Twitter",
+      "href": "https://www.twitter.com",
+      "title": "",
+      "id": "#icon-twitter"
+    },
+    {
+      "name": "Pinterest",
+      "href": "https://www.pinterest.com",
+      "title": "",
+      "id": "#icon-pinterest"
+    },
+    {
+      "name": "Instagram",
+      "href": "https://www.instagram.com",
+      "title": "",
+      "id": "#icon-instagram"
+    }
+  ],
+
+  "footer": {
+    "copyright": "Challenge by <a href=\"https://www.frontendmentor.io\">Frontend Mentor</a>. Coded by <a href=\"https://github.com/nmorajda\">N. Morajda</a>"
+  }
+}
