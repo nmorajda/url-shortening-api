@@ -1,0 +1,30 @@
+mixin link(options={})
+    - 
+        const defaults = {
+            type: false,
+            prefix: false,
+            attrs: {}
+        }
+
+        const settings = Object.assign({}, defaults, options);
+        const {type, attrs} = settings;
+
+        let href = '';
+
+        if (settings.type === 'internal') {
+            if (router.pages[attrs.href]) {
+                href = `${router.pages[attrs.href].url}.html`;
+            }
+        }
+
+        if (settings.prefix === 'tel' && !attrs.href.includes('tel')) {
+            href = 'tel:'+attrs.href.replace(/ /g,'');
+        } else if (settings.prefix === 'mailto' && !attrs.href.includes('mailto')) {
+            href = pathToFile+'php/redirect-mailto.php?subject=Wiadomość ze strony www'
+        }
+
+        attrs.href = href || attrs.href;
+
+    a&attributes(attrs)
+        if block
+            block 

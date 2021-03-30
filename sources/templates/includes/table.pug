@@ -1,0 +1,32 @@
+mixin table(options = {})
+    - 
+        const defaults = {
+            thead: ['Company', 'Country', 'Contact'],
+            tbody: [['IBM', 'Poland', '665665025']],
+            tfoot: ['Company', 'Country', 'Contact'],
+            config: {
+                activeRow: 1,
+                attrs: {
+                    class: "table is-fullwidth is-bordered"
+                }
+            }
+        }
+
+        const settings = Object.assign({}, defaults, options);
+    
+
+    table&attributes(settings.config.attrs)
+        
+        thead
+            tr
+                each th in settings.thead
+                    th !{th}
+        tbody
+            each tr, index in settings.tbody
+                tr(class=settings.config.activeRow === index+1 ? 'is-selected': '')
+                    each td in tr
+                        td !{td}
+        tfoot
+            tr
+                each tf in settings.tfoot
+                    td !{tf}

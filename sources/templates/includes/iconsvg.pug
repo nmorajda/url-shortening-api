@@ -1,0 +1,11 @@
+mixin iconsvg(options={})
+    -
+        const defaults = {
+            size: '',
+            id: ''
+        }
+        const settings = Object.assign({}, defaults, options)
+        
+    span.icon(class=settings.size)
+        svg
+            use(xlink:href=settings.id)

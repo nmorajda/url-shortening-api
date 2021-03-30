@@ -1,0 +1,31 @@
+mixin header({ brand, menu } = data)
+    header.header
+        .container.header__container 
+            .header__logo 
+                +link({attrs: brand.link.attrs})
+                    img(src=pathToFile+'images/logo.svg', alt="Logo")
+            .header__button
+                button.btn.btn-hamburger(aria-label="menu button")
+                    span(arial-hidden="true")
+                    span(arial-hidden="true")
+                    span(arial-hidden="true")
+            nav.header__nav
+                .header__nav__list
+                    each item in menu.mainMenu.items 
+                        if item.dropdown 
+                            .header__nav__item.has-dropdown 
+                                +link({attrs: {href: item.attrs.href, class: 'header__nav__link'}})
+                                        | #{item.anchor}
+                                .header__nav__dropdown__wrapper
+                                    .header__nav__dropdown 
+                                        each drop in item.dropdown 
+                                            +link({attrs: drop.attrs})
+                                                | #{drop.anchor}
+                        else
+                            .header__nav__item
+                                +link({attrs: {href: item.attrs.href, class: 'header__nav__link'}})
+                                    | #{item.anchor}
+                .header__nav__buttons 
+                    each button in menu.mainMenu.buttons 
+                        +button(button)
+                            | #{button.text}
