@@ -1,0 +1,93 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+*:focus {
+  outline: 2px dotted $grey;
+  outline-offset: 2px;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-primary;
+  font-weight: $font-weight-normal;
+  overflow-x: hidden;
+  text-align: center;
+  background-color: $body-background-color;
+
+  @media (min-width: $breakpoint) {
+    text-align: left;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-bold;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* links */
+a {
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+/* Images */
+img {
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 2.4rem;
+
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;  
+}
+
+.cool-link {
+  position: relative;
+  &:after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    bottom: -0.5rem;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width .3s;
+  }
+
+  &:hover,
+  &:focus {
+    &:after {
+      width: 100%;
+    }
+  }
+}

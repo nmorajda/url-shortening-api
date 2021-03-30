@@ -1,0 +1,57 @@
+.shape {
+  &-check {
+    display     : block;
+    width       : 5px;
+    height      : 11px;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    border-color: currentColor;
+
+    transform: rotate(45deg);
+
+    &--x2 {
+      width       : 10px;
+      height      : 12px;
+      border-width: 0 4px 4px 0;
+    }
+  }
+
+  &-arrow {
+    $width: 2px;
+
+    // display     : inline-block;
+    margin-top  : $width;
+    padding     : $width;
+    border      : solid currentColor;
+    border-width: 0 $width $width 0;
+
+    &--up {
+      transform: rotate(-135deg);
+    }
+
+    &--right {
+      transform: rotate(-45deg);
+    }
+
+    &--down {
+      transform: rotate(45deg);
+    }
+
+    &--left {
+      transform: rotate(135deg);
+    }
+
+    $i: 1;
+
+    @each $breakpoint in $breakpoints {
+      $size: $width*$i;
+      $i   : $i+1;
+
+      &--#{$breakpoint} {
+        margin-top  : $size;
+        padding     : $size;
+        border-width: 0 $size $size 0;
+      }
+    }
+  }
+}
