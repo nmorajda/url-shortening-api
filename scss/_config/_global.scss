@@ -1,0 +1,60 @@
+$breakpoints: (
+    xs: 480px,
+    sm: 640px, 
+    md: 800px, 
+    lg: 1024px,
+    xlg: 1200px
+);
+
+$breakpoint: 800px;
+$container-max-width: 114rem;
+
+// colors
+$cyan: hsl(180, 66%, 49%);
+$cyan-light: #9BE3E2;
+$dark-violet: hsl(257, 27%, 26%);
+$red: hsl(0, 87%, 67%);
+$gray: hsl(0, 0%, 75%);
+$grayish-violet: hsl(257, 7%, 63%);
+$very-dark-blue: hsl(255, 11%, 22%);
+$very-dark-violet: hsl(260, 8%, 14%);
+
+$light-red: hsl(356, 100%, 66%);
+$very-light-red: hsl(355, 100%, 74%); // hover
+$very-dark-blue: hsl(208, 49%, 24%); // headings
+
+$primary: $cyan;
+$primary-light: $cyan-light;
+$secondary: $dark-violet;
+$secondary-light: lighten($dark-violet, 30);
+$white: #fff;
+$light: $gray;
+$grey: $gray;
+$grey-dark: $grayish-violet;
+$grey-medium: $grayish-violet;
+$dark: $very-dark-violet;
+
+$error: tomato;
+
+// Body
+$body-background-color: #F0F1F6;
+
+// Header
+$header-link-color: $grayish-violet;
+$header-mobile-background-color: $dark-violet;
+
+// Fotter
+$footer-link-color:  $grayish-violet;
+$footer-background-color: $dark;
+
+$border-color: $grayish-violet;
+$border-radius-sm: 3px;
+
+$boxShadow: 0 0 13px 3px rgba(0, 0, 0, 0.1);
+
+// Overpass:wght@300;600&family=Ubuntu:wght@400;500;700
+$font-family-primary: 'Poppins', sans-serif;
+$font-family-secondary: 'Poppins', sans-serif;
+$font-size-primary: 1.8rem;
+$font-weight-normal: 500;
+$font-weight-bold: 700;
