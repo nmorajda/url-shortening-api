@@ -156,8 +156,9 @@
 
             &.has-dropdown {
                 position: relative;
-
+                left: 1rem; // because in right side add 2rem padding for arrow
                 @include breakpoint(md) {
+                    left: 0;
                     margin-bottom: 0;
                     padding: 0;
                     border: 0;
